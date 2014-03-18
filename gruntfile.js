@@ -36,38 +36,39 @@ module.exports = function(grunt) {
     karma: {
       continuous: {
 
-      options : {
-        files : [
-            'app/lib/angular/angular.js',
-            'app/lib/angular/angular-*.js',
-            'test/lib/angular/angular-mocks.js',
-            'app/js/**/*.js',
-            'test/unit/**/*.js'
-          ],
-
-          exclude : [
-            'app/lib/angular/angular-loader.js',
-            'app/lib/angular/*.min.js',
-            'app/lib/angular/angular-scenario.js'
-          ]
-        },
-
-        frameworks: ['jasmine'],
-        browsers : ['PhantomJS'],
-        plugins : [
-            'karma-junit-reporter',
-            'karma-phantomjs-launcher',
-            'karma-jasmine'
+        options : {
+          files : [
+              'app/lib/angular/angular.js',
+              'app/lib/angular/angular-*.js',
+              'test/lib/angular/angular-mocks.js',
+              'app/js/**/*.js',
+              'test/unit/**/*.js'
             ],
 
-        junitReporter : {
-          outputFile: 'test_out/unit.xml',
-          suite: 'unit'
-        },
+            exclude : [
+              'app/lib/angular/angular-loader.js',
+              'app/lib/angular/*.min.js',
+              'app/lib/angular/angular-scenario.js'
+            ],
 
-        singleRun: true
+            frameworks: ['jasmine'],
+            browsers : ['PhantomJS'],
+            plugins : [
+                'karma-junit-reporter',
+                'karma-phantomjs-launcher',
+                'karma-jasmine'
+                ],
+
+            junitReporter : {
+              outputFile: 'test_out/unit.xml',
+              suite: 'unit'
+            },
+
+            singleRun: true
+        }
       }
-    }    
+    }
+
   });
 
   grunt.loadNpmTasks('grunt-typescript');
