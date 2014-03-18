@@ -22,4 +22,4 @@ script:
   - karma start config/karma.conf.js --no-auto-watch --single-run --reporters=dots --browsers=Firefox
   - webdriver-manager update
   - protractor config/protractor-conf.js --browser=firefox
-  - grunt
+  - grunt test

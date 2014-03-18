@@ -56,8 +56,6 @@ module.exports = function(grunt) {
         browsers : ['PhantomJS'],
         plugins : [
             'karma-junit-reporter',
-            'karma-chrome-launcher',
-            'karma-firefox-launcher',
             'karma-phantomjs-launcher',
             'karma-jasmine'
             ],
@@ -78,5 +76,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-karma');
 
   grunt.registerTask('default', ['typescript', 'jshint', 'karma:continuous']);
+  grunt.registerTask('build', ['typescript', 'jshint']);
+  grunt.registerTask('test', ['karma:continuous']);
 
 };
