@@ -1,12 +1,17 @@
 {
-  "name": "angularjs-seed",
-  "description": "A starter project for AngularJS",
-  "repository": "https://github.com/angular/angular-seed",
+  "name": "angularjs-seed-typescript",
+  "description": "A starter project for AngularJS with Typescript",
+  "repository": "https://github.com/jaybeavers/angular-seed-typescript",
   "devDependencies": {
     "phantomjs" : "~1.9",
     "karma" : "~0.10",
     "karma-junit-reporter" : "~0.1",
     "karma-jasmine" : "~0.1",
-    "protractor" : "~0.17.0"
+    "protractor" : "~0.17.0",
+    "grunt": "*",
+    "grunt-typescript": "*",
+    "grunt-contrib-jshint": "*",
+    "grunt-contrib-watch": "*",
+    "typescript": "*"
   }
 }
