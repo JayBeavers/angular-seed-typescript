@@ -7,10 +7,10 @@
     "karma" : "~0.12",
     "karma-junit-reporter" : "~0.1",
     "karma-jasmine" : "~0.1",
-    "protractor" : "~0.17.0",
     "grunt": "*",
     "grunt-typescript": "*",
     "grunt-contrib-jshint": "*",
+    "grunt-karma": "*",
     "grunt-contrib-watch": "*",
     "typescript": "*"
   }
