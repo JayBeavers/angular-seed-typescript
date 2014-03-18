@@ -4,7 +4,7 @@
   "repository": "https://github.com/jaybeavers/angular-seed-typescript",
   "devDependencies": {
     "phantomjs" : "~1.9",
-    "karma" : "~0.10",
+    "karma" : "~0.12",
     "karma-junit-reporter" : "~0.1",
     "karma-jasmine" : "~0.1",
     "protractor" : "~0.17.0",
