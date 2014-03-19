@@ -1,3 +1,5 @@
+/// <reference path="../../DefinitelyTyped/angularjs/angular.d.ts" />
+
 'use strict';
 
 // Declare app level module which depends on filters, and services
