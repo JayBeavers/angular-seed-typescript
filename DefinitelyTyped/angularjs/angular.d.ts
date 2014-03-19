@@ -4,7 +4,7 @@
 // Definitions: https://github.com/borisyankov/DefinitelyTyped
 
 
-/// <reference path="../jquery/jquery.d.ts" />
+// /// <reference path="../jquery/jquery.d.ts" />
 
 declare var angular: ng.IAngularStatic;
 
@@ -30,11 +30,10 @@ declare module ng {
     interface IAngularStatic {
         bind(context: any, fn: Function, ...args: any[]): Function;
         bootstrap(element: string, modules?: any[]): auto.IInjectorService;
-        bootstrap(element: JQuery, modules?: any[]): auto.IInjectorService;
         bootstrap(element: Element, modules?: any[]): auto.IInjectorService;
         bootstrap(element: Document, modules?: any[]): auto.IInjectorService;
         copy(source: any, destination?: any): any;
-        element: IAugmentedJQueryStatic;
+        element: Element;
         equals(value1: any, value2: any): boolean;
         extend(destination: any, ...sources: any[]): any;
         forEach(obj: any, iterator: (value: any, key: any) => any, context?: any): any;
@@ -444,7 +443,7 @@ declare module ng {
     // RootElementService
     // see http://docs.angularjs.org/api/ng.$rootElement
     ///////////////////////////////////////////////////////////////////////////
-    interface IRootElementService extends JQuery {}
+    interface IRootElementService {}  //extends JQuery {}
 
     ///////////////////////////////////////////////////////////////////////////
     // QService
@@ -530,7 +529,7 @@ declare module ng {
     interface ICompileService {
         (element: string, transclude?: ITranscludeFunction, maxPriority?: number): ITemplateLinkingFunction;
         (element: Element, transclude?: ITranscludeFunction, maxPriority?: number): ITemplateLinkingFunction;
-        (element: JQuery, transclude?: ITranscludeFunction, maxPriority?: number): ITemplateLinkingFunction;
+        //(element: JQuery, transclude?: ITranscludeFunction, maxPriority?: number): ITemplateLinkingFunction;
     }
 
     interface ICompileProvider extends IServiceProvider {
@@ -542,20 +541,20 @@ declare module ng {
 
     interface ICloneAttachFunction {
         // Let's hint but not force cloneAttachFn's signature
-        (clonedElement?: JQuery, scope?: IScope): any;
+        (clonedElement?: Element, scope?: IScope): any;
     }
 
     // This corresponds to the "publicLinkFn" returned by $compile.
     interface ITemplateLinkingFunction {
-        (scope: IScope, cloneAttachFn?: ICloneAttachFunction): IAugmentedJQuery;
+        (scope: IScope, cloneAttachFn?: ICloneAttachFunction): Element;
     }
 
     // This corresponds to $transclude (and also the transclude function passed to link).
     interface ITranscludeFunction {
         // If the scope is provided, then the cloneAttachFn must be as well.
-        (scope: IScope, cloneAttachFn: ICloneAttachFunction): IAugmentedJQuery;
+        (scope: IScope, cloneAttachFn: ICloneAttachFunction): Element;
         // If one argument is provided, then it's assumed to be the cloneAttachFn.
-        (cloneAttachFn?: ICloneAttachFunction): IAugmentedJQuery;
+        (cloneAttachFn?: ICloneAttachFunction): Element;
     }
 
     ///////////////////////////////////////////////////////////////////////////
@@ -743,7 +742,7 @@ declare module ng {
 
     interface IDirective{
         compile?:
-            (templateElement: IAugmentedJQuery,
+            (templateElement: Element,
             templateAttributes: IAttributes,
             transclude: ITranscludeFunction
             ) => any;
@@ -751,7 +750,7 @@ declare module ng {
         controllerAs?: string;
         link?:
             (scope: IScope,
-            instanceElement: IAugmentedJQuery,
+            instanceElement: Element,
             instanceAttributes: IAttributes,
             controller: any,
             transclude: ITranscludeFunction
@@ -768,6 +767,7 @@ declare module ng {
         transclude?: any;
     }
 
+    /*
     ///////////////////////////////////////////////////////////////////////////
     // angular.element
     // when calling angular.element, angular returns a jQuery object,
@@ -779,7 +779,7 @@ declare module ng {
         (element: Element): IAugmentedJQuery;
         (object: {}): IAugmentedJQuery;
         (elementArray: Element[]): IAugmentedJQuery;
-        (object: JQuery): IAugmentedJQuery;
+        //(object: JQuery): IAugmentedJQuery;
         (func: Function): IAugmentedJQuery;
         (array: any[]): IAugmentedJQuery;
         (): IAugmentedJQuery;
@@ -791,7 +791,7 @@ declare module ng {
 
         find(selector: string): IAugmentedJQuery;
         find(element: any): IAugmentedJQuery;
-        find(obj: JQuery): IAugmentedJQuery;
+        //find(obj: JQuery): IAugmentedJQuery;
 
         controller(name: string): any;
         injector(): any;
@@ -801,17 +801,18 @@ declare module ng {
         inheritedData(obj: { [key: string]: any; }): JQuery;
         inheritedData(key?: string): any;
     }
+    */
 
     ///////////////////////////////////////////////////////////////////////
     // AnimateService
     // see http://docs.angularjs.org/api/ng.$animate
     ///////////////////////////////////////////////////////////////////////
     interface IAnimateService {
-        addClass(element: JQuery, className: string, done?: Function): void;
-        enter(element: JQuery, parent: JQuery, after: JQuery, done?: Function): void;
-        leave(element: JQuery, done?: Function): void;
-        move(element: JQuery, parent: JQuery, after: JQuery, done?: Function): void;
-        removeClass(element: JQuery, className: string, done?: Function): void;
+        addClass(element: Element, className: string, done?: Function): void;
+        enter(element: Element, parent: Element, after: Element, done?: Function): void;
+        leave(element: Element, done?: Function): void;
+        move(element: Element, parent: Element, after: Element, done?: Function): void;
+        removeClass(element: Element, className: string, done?: Function): void;
     }
 
     ///////////////////////////////////////////////////////////////////////////

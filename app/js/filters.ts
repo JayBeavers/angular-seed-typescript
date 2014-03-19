@@ -1,3 +1,5 @@
+/// <reference path="../../DefinitelyTyped/angularjs/angular.d.ts" />
+
 'use strict';
 
 /* Filters */
